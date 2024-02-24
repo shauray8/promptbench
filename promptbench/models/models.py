@@ -47,7 +47,9 @@ class LMMBaseModel(ABC):
                                      do_sample=True,
                                      **kwargs)
         
-        out = self.tokenizer.decode(outputs[0])
+        #out = self.tokenizer.decode(outputs[0])
+        out = self.tokenizer.decode(
+            outputs[0, input_ids.shape[1] :], skip_special_tokens=True).strip()
         return out
 
     def __call__(self, input_text, **kwargs):
@@ -159,6 +161,30 @@ class MistralModel(LMMBaseModel):
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
 
+class Gemme(LMMBaseModel):
+    """
+    Language model class for the Mistral model.
+
+    Inherits from LMMBaseModel and sets up the Mistral language model for use.
+
+    Parameters:
+    -----------
+    model : str
+        The name of the Gemme model.
+    max_new_tokens : int
+        The maximum number of new tokens to be generated.
+    temperature : float
+        The temperature for text generation (default is 0).
+    device: str
+        The device to use for inference (default is 'auto').
+    dtype: str
+        The dtype to use for inference (default is 'auto').
+    """
+    def __init__(self, model_name, max_new_tokens, temperature, device, dtype):
+        super(Gemme, self).__init__(model_name, max_new_tokens, temperature, device)
+        from transformers import AutoTokenizer, AutoModelForCausalLM
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
+        self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
 
 class PhiModel(LMMBaseModel):
     """
@@ -544,3 +570,4 @@ class GeminiModel(LMMBaseModel):
         response = model.generate_content(input_text).text
 
         return response
+

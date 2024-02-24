@@ -91,16 +91,15 @@ TASK_ORIENTED_PROMPTS = {
 # For the prompts, please first add a quote " at the beginning and the end of each sentence, and then and a comma at the end.
     
     'mmlu': [
-        "Answer the following multiple-choice question about {task} by selecting the correct option: 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "For the multiple-choice question related to {task}, please choose the most accurate answer from 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Below are multiple-choice question concerning {task}. Indicate your response with 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Please respond to the multiple-choice question about {task} by selecting the appropriate answer: 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Regarding the following multiple-choice question on {task}, pick the correct answer from the options 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Evaluate the multiple-choice question about {task} and select the most fitting response from 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Examine the following question based on {task} and choose the correct response from 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "For each multiple-choice question about {task}, identify the correct answer by selecting 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "In relation to the multiple-choice question on {task}, please provide the accurate answer by choosing 'A', 'B', 'C', or 'D'. \nQuestion:{content}\nAnswer:",
-        "Answer the subsequent multiple-choice question about {task} by picking the right option among 'A', 'B', 'C', or 'D'. "
+        "Answer the following multiple-choice question about {task} by selecting the correct option: 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "For the multiple-choice question related to {task}, please choose the most accurate answer from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "Below are multiple-choice question concerning {task}. Indicate your response with 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "Please respond to the multiple-choice question about {task} by selecting the appropriate answer: 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "Regarding the following multiple-choice question on {task}, pick the correct answer from the options 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "Evaluate the multiple-choice question about {task} and select the most fitting response from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "Examine the following question based on {task} and choose the correct response from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "For each multiple-choice question about {task}, identify the correct answer by selecting 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
+        "In relation to the multiple-choice question on {task}, please provide the accurate answer by choosing 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:",
     ],
 
     'sst2': [
@@ -214,3 +213,4 @@ TASK_ORIENTED_PROMPTS = {
     ],
 
 }
+
