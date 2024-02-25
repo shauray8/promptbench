@@ -161,7 +161,7 @@ class MistralModel(LMMBaseModel):
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
 
-class Gemme(LMMBaseModel):
+class Gemma(LMMBaseModel):
     """
     Language model class for the Mistral model.
 
@@ -181,7 +181,7 @@ class Gemme(LMMBaseModel):
         The dtype to use for inference (default is 'auto').
     """
     def __init__(self, model_name, max_new_tokens, temperature, device, dtype):
-        super(Gemme, self).__init__(model_name, max_new_tokens, temperature, device)
+        super(Gemma, self).__init__(model_name, max_new_tokens, temperature, device)
         from transformers import AutoTokenizer, AutoModelForCausalLM
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
