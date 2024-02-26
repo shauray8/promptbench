@@ -74,6 +74,13 @@
 - [15/12/2023] Add detailed instructions for users to add new modules (models, datasets, etc.) [examples/add_new_modules.md](examples/add_new_modules.md). 
 - [05/12/2023] Published promptbench 0.0.1.
 
+<!-- To be Done -->
+
+## TODOs
+- [27/02/2024] Add support for huggingface dataset to not sequentially load the data
+- [27/02/2024] Add HumanEval to the loop, bunch of models to be tested
+- [27/02/2024] Add support for weights and biases for graphing and shit
+- [27/02/2024] Write a script for testing models quickly
 
 <!-- Introduction -->
 
