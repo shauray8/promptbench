@@ -39,6 +39,20 @@ class LMMBaseModel(ABC):
             device = 'cuda' if torch.cuda.is_available() else 'cpu'
         else:
             device = self.device
+            
+        if self.model_name == "TinyLlama/TinyLlama-1.1B-Chat-v1.0":
+            messages = [
+                {
+                    "role": "system",
+                    "content": "You are a friendly and intelligent chatbot",
+                },
+                {"role": "user", "content": f"{input_text}"},
+            ]
+            prompt = self.model.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True) 
+            outputs = self.model(prompt, max_new_tokens=self.max_new_tokens, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
+
+            return outputs[0]["generated_text"].split("<|assistant|>")[1].strip()
+
         input_ids = self.tokenizer(input_text, return_tensors="pt").input_ids.to(device)
 
         outputs = self.model.generate(input_ids, 
@@ -181,10 +195,35 @@ class Gemma(LMMBaseModel):
         The dtype to use for inference (default is 'auto').
     """
     def __init__(self, model_name, max_new_tokens, temperature, device, dtype):
-        super(Gemma, self).__init__(model_name, max_new_tokens, temperature, device)
+        super(Gemme, self).__init__(model_name, max_new_tokens, temperature, device)
         from transformers import AutoTokenizer, AutoModelForCausalLM
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
+
+class TinyLlama(LMMBaseModel):
+    """
+    Language model class for the Mistral model.
+
+    Inherits from LMMBaseModel and sets up the Mistral language model for use.
+
+    Parameters:
+    -----------
+    model : str
+        The name of the Gemme model.
+    max_new_tokens : int
+        The maximum number of new tokens to be generated.
+    temperature : float
+        The temperature for text generation (default is 0).
+    device: str
+        The device to use for inference (default is 'auto').
+    dtype: str
+        The dtype to use for inference (default is 'auto').
+    """
+    def __init__(self, model_name, max_new_tokens, temperature, device, dtype):
+        super(TinyLlama, self).__init__(model_name, max_new_tokens, temperature, device)
+        import torch
+        from transformers import pipeline
+        self.model = pipeline("text-generation", model=self.model_name, torch_dtype=torch.bfloat16, device_map="auto")
 
 class PhiModel(LMMBaseModel):
     """
@@ -570,4 +609,3 @@ class GeminiModel(LMMBaseModel):
         response = model.generate_content(input_text).text
 
         return response
-
