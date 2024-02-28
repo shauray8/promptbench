@@ -49,7 +49,7 @@ class LMMBaseModel(ABC):
                 {"role": "user", "content": f"{input_text}"},
             ]
             prompt = self.model.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True) 
-            outputs = self.model(prompt, max_new_tokens=self.max_new_tokens, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
+            outputs = self.model(prompt, max_new_tokens=self.max_new_tokens, do_sample=True, temperature=0.2, top_k=50, top_p=0.95)
 
             return outputs[0]["generated_text"].split("<|assistant|>")[1].strip()
 
@@ -195,7 +195,7 @@ class Gemma(LMMBaseModel):
         The dtype to use for inference (default is 'auto').
     """
     def __init__(self, model_name, max_new_tokens, temperature, device, dtype):
-        super(Gemme, self).__init__(model_name, max_new_tokens, temperature, device)
+        super(Gemma, self).__init__(model_name, max_new_tokens, temperature, device)
         from transformers import AutoTokenizer, AutoModelForCausalLM
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=dtype, device_map=device)
