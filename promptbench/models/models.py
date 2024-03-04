@@ -57,7 +57,6 @@ class LMMBaseModel(ABC):
 
         outputs = self.model.generate(input_ids, 
                                      max_new_tokens=self.max_new_tokens, 
-                                     temperature=self.temperature,
                                      do_sample=True,
                                      **kwargs)
         
