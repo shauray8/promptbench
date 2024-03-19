@@ -2,7 +2,7 @@ import promptbench as pb
 import torch
 import json 
 
-model = pb.LLMModel(model='migtissera/Tess-M-v1.3', max_new_tokens=1, device="cuda", dtype=torch.float16, api_key="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")
+model = pb.LLMModel(model='migtissera/Tess-M-v1.3', max_new_tokens=1, device="cuda", dtype=torch.float16, api_key="")
 
 data = "mmlu"
 prompts = pb.Prompt(dataset_name=data)
