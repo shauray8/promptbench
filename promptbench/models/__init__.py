@@ -6,7 +6,7 @@ from .models import *
 # A dictionary mapping of model architecture to its supported model names
 MODEL_LIST = {
     T5Model: ['google/flan-t5-large'],
-    LlamaModel: ['llama2-7b', 'llama2-7b-chat', 'llama2-13b', 'llama2-13b-chat', 'llama2-70b', 'llama2-70b-chat',],
+    LlamaModel: ['llama2-7b', 'llama2-7b-chat', 'llama2-13b', 'llama2-13b-chat', 'llama2-70b', 'llama2-70b-chat','migtissera/Tess-M-v1.3'],
     TinyLlama: ['TinyLlama/TinyLlama-1.1B-Chat-v1.0',],
     PhiModel: ['phi-1.5', 'phi-2'],
     PaLMModel: ['palm'],
@@ -15,7 +15,7 @@ MODEL_LIST = {
     UL2Model: ['google/flan-ul2'],
     GeminiModel: ['gemini-pro'],
     Gemma: ["google/gemma-7b-it"],
-    MistralModel: ['mistralai/Mistral-7B-v0.1', 'mistralai/Mistral-7B-Instruct-v0.1'],
+    MistralModel: ['mistralai/Mistral-7B-v0.1', 'mistralai/Mistral-7B-Instruct-v0.1','bardsai/jaskier-7b-dpo-v5.6','bardsai/jaskier-7b-dpo-v6.1','paulml/OGNO-7B'],
     MixtralModel: ['mistralai/Mixtral-8x7B-v0.1', 'mistralai/Mixtral-8x7B-Instruct-v0.1'],
     YiModel: ['01-ai/Yi-6B', '01-ai/Yi-34B', '01-ai/Yi-6B-Chat', '01-ai/Yi-34B-Chat'],
     BaichuanModel: ['baichuan-inc/Baichuan2-7B-Base', 'baichuan-inc/Baichuan2-13B-Base',

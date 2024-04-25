@@ -1,0 +1,11 @@
+[
+  "0.605, Answer the following multiple-choice question about {task} by selecting the correct option: 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.613, For the multiple-choice question related to {task}, please choose the most accurate answer from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.618, Below are multiple-choice question concerning {task}. Indicate your response with 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.607, Please respond to the multiple-choice question about {task} by selecting the appropriate answer: 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.610, Regarding the following multiple-choice question on {task}, pick the correct answer from the options 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.603, Evaluate the multiple-choice question about {task} and select the most fitting response from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.612, Examine the following question based on {task} and choose the correct response from 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.613, For each multiple-choice question about {task}, identify the correct answer by selecting 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])",
+  "0.605, In relation to the multiple-choice question on {task}, please provide the accurate answer by choosing 'A', 'B', 'C', or 'D'. \nQuestion:{input} \nA. {A},\nB. {B},\nC. {C},\nD. {D}, \nAnswer:, dict_items([])"
+]
